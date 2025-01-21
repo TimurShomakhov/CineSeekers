@@ -1,6 +1,6 @@
 // Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", () => {
-  const API_KEY = "API Key Goes Here"; // Replace with your TMDB API key
+  const API_KEY = "e1db7731774da84825c6ecc635ee0aea"; // Replace with your TMDB API key
   const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
   const moviesContainer = document.getElementById("movies");
   const fetchMoviesButton = document.getElementById("fetchMovies");
