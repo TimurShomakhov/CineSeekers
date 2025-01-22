@@ -36,7 +36,8 @@
                             class="w-16"
                             src="images/CineSeekers_Logo_PNG_Based.svg"
                             alt="Cine Seekers Logo" />
-                        <figcaption class="lg:text-4xl sm:text-4xl text-2xl font-bold">
+                        <figcaption
+                            class="lg:text-4xl sm:text-4xl text-2xl font-bold">
                             Cine Seekers
                         </figcaption>
                     </figure>
@@ -70,69 +71,68 @@
 
         <main>
             <!-- Start hero section -->
-            <section id="hero" class=" bg-black py-8 text-center">
+            <section id="hero" class="bg-black py-8 text-center">
+                <div
+                    id="hero"
+                    class="container mx-auto p-4 max-w-prose text-wrap">
+                    <!-- headline container -->
+                    <div class="mb-6">
+                        <article class="text-white break-words">
+                            <h1 class="text-5xl font-bold">Welcome!</h1>
+                            <p class="mx-auto mt-4">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quod illum asperiores,
+                                accusamus praesentium perferendis nemo provident
+                                magnam consequuntur aspernatur totam fuga
+                                mollitia sequi ducimus corporis quis aliquid
+                                distinctio, debitis voluptas.
+                            </p>
+                        </article>
+                    </div>
 
-              <div id="hero" class="container mx-auto p-4 max-w-prose text-wrap">
-                  <!-- headline container -->
-                  <div class="mb-6">
+                    <!-- Keyword Search -->
 
-                    <article class= "text-white break-words">
-                      <h1 class="text-5xl font-bold">
-                          Welcome!
-                      </h1>
-                      <p class="mx-auto mt-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod illum asperiores, 
-                        accusamus praesentium perferendis nemo provident magnam consequuntur aspernatur 
-                        totam fuga mollitia sequi ducimus corporis quis aliquid distinctio, debitis voluptas.
-                    </p>
-                    </article>
-                  </div>
-
-                  <!-- Keyword Search -->
-
-                  <section id="search-form" class="p-6 bg-slate-50 rounded-lg max-w-max mx-auto">
-                    <form class="flex flex-col items-center space-y-2">
-                        <h4 class="font-semibold text-gray-800">
-                            Find Movies by Buzzword or Title
-                        </h4>
-                        <!-- Input field -->
-                        <input 
-                            type="text" 
-                            id="search" 
-                            placeholder="Insert Keyword or Title"
-                            class="p-1 border border-gray-300 rounded-md text-lg 
-                            focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent 
-                            w-full max-w-xs" 
-                        />
-                        <!-- Search button -->
-                        <button 
-                            type="submit" 
-                            class="bg-red-500 text-white font-medium py-2 px-6 rounded-md hover:bg-red-600">
-                            Search
-                        </button>
-                    </form>
-                </section>
-                  </div>
-          </section>
+                    <section
+                        id="search-form"
+                        class="p-6 bg-slate-50 rounded-lg max-w-max mx-auto">
+                        <form class="flex flex-col items-center space-y-2">
+                            <h4 class="font-semibold text-gray-800">
+                                Find Movies by Buzzword or Title
+                            </h4>
+                            <!-- Input field -->
+                            <input
+                                type="text"
+                                id="search"
+                                placeholder="Insert Keyword or Title"
+                                class="p-1 border border-gray-300 rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent w-full max-w-xs" />
+                            <!-- Search button -->
+                            <button
+                                id="searchBtn"
+                                type="submit"
+                                class="bg-red-500 text-white font-medium py-2 px-6 rounded-md hover:bg-red-600">
+                                Search
+                            </button>
+                        </form>
+                    </section>
+                </div>
+            </section>
             <!-- End hero section -->
 
             <!-- Start section popular movies -->
             <section class="container mx-auto" id="popular">
                 <div class="flex flex-col">
-                    <h2 class="text-2xl font-bold">
-                        Popular Movies
-                    </h2>
-                    <div 
-                    id="popular-movie-container"
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    <!-- Retrieve and display a list of popular movies from TMDB API. -->
+                    <h2 class="text-2xl font-bold">Popular Movies</h2>
+                    <div
+                        id="popular-movie-container"
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        <!-- Retrieve and display a list of popular movies from TMDB API. -->
                     </div>
                 </div>
             </section>
             <!-- End section popular movies -->
 
             <!-- Start section results -->
-            <section id="results" class="bg-black py-8">
+            <section id="results-section" class="bg-black py-8 hidden">
                 <!-- content wrapper -->
                 <div id="results-container" class="container mx-auto">
                     <!-- headline container -->
@@ -144,97 +144,7 @@
                     <!-- result container -->
                     <div
                         id="resultCards"
-                        class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- start result item -->
-                        <div
-                            id="resultItem"
-                            class="bg-white rounded-lg p-4 flex gap-4">
-                            <div class="flex-shrink-0 mx-auto md:mx-0">
-                                <img
-                                    class="max-h-48 w-auto rounded-md"
-                                    src="https://media.themoviedb.org/t/p/w220_and_h330_face/2E1x1qcHqGZcYuYi4PzVZjzg8IV.jpg"
-                                    alt="wicked" />
-                            </div>
-                            <div class="flex-1">
-                                <h3
-                                    class="text-lg font-semibold text-gray-900 mb-2">
-                                    Wicked
-                                </h3>
-                                <div>
-                                    <div
-                                        class="text-xs text-gray-600 flex flex-wrap gap-x-4 gap-y-1 mb-4">
-                                        <span>12/12/2024 (DE)</span>
-                                        <span>get the genres</span>
-                                        <span>get the runtime</span>
-                                    </div>
-                                    <h4
-                                        class="font-semibold text-gray-800 mb-2">
-                                        Overview
-                                    </h4>
-                                    <p
-                                        class="text-sm text-gray-700 leading-relaxed">
-                                        In the land of Oz, ostracized and
-                                        misunderstood green-skinned Elphaba is
-                                        forced to share a room with the popular
-                                        aristocrat Glinda at Shiz University,
-                                        and the two's unlikely friendship is
-                                        tested as they begin to fulfill their
-                                        respective destinies as Glinda the Good
-                                        and the Wicked Witch of the West.
-                                    </p>
-                                </div>
-                                <button
-                                    class="mt-4 bg-red-500 text-white font-medium py-2 px-4 rounded-md hover:bg-red-600">
-                                    Add to favorites
-                                </button>
-                            </div>
-                        </div>
-                        <!-- end result item -->
-                        <div
-                            id="resultItem"
-                            class="bg-white rounded-lg p-4 flex gap-4">
-                            <div class="flex-shrink-0 mx-auto md:mx-0">
-                                <img
-                                    class="max-h-48 w-auto rounded-md"
-                                    src="https://media.themoviedb.org/t/p/w220_and_h330_face/2E1x1qcHqGZcYuYi4PzVZjzg8IV.jpg"
-                                    alt="wicked" />
-                            </div>
-                            <div class="flex-1">
-                                <h3
-                                    class="text-lg font-semibold text-gray-900 mb-2">
-                                    Wicked
-                                </h3>
-                                <div>
-                                    <div
-                                        class="text-xs text-gray-600 flex flex-wrap gap-x-4 gap-y-1 mb-4">
-                                        <span>12/12/2024 (DE)</span>
-                                        <span>get the genres</span>
-                                        <span>get the runtime</span>
-                                    </div>
-                                    <h4
-                                        class="font-semibold text-gray-800 mb-2">
-                                        Overview
-                                    </h4>
-                                    <p
-                                        class="text-sm text-gray-700 leading-relaxed">
-                                        In the land of Oz, ostracized and
-                                        misunderstood green-skinned Elphaba is
-                                        forced to share a room with the popular
-                                        aristocrat Glinda at Shiz University,
-                                        and the two's unlikely friendship is
-                                        tested as they begin to fulfill their
-                                        respective destinies as Glinda the Good
-                                        and the Wicked Witch of the West.
-                                    </p>
-                                </div>
-                                <button
-                                    class="mt-4 bg-red-500 text-white font-medium py-2 px-4 rounded-md hover:bg-red-600">
-                                    Add to favorites
-                                </button>
-                            </div>
-                        </div>
-                        <!-- end result item -->
-                    </div>
+                        class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
                 </div>
             </section>
             <!-- End section results -->
@@ -244,7 +154,9 @@
             <!-- Footer container -->
             <div class="flex container mx-auto my-2">
                 <div class="flex-col w-2/5">
-                    <p class="lg:text-4xl sm:text-4xl text-2xl font-bold">Cine Seekers</p>
+                    <p class="lg:text-4xl sm:text-4xl text-2xl font-bold">
+                        Cine Seekers
+                    </p>
                     <div class="my-4 flex flex-wrap gap-6">
                         <img
                             class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3]"
@@ -323,5 +235,5 @@
             </div>
         </footer>
     </body>
-    <script src="javascript.js"></script>
+    <script src="./javascript.js"></script>
 </html>
