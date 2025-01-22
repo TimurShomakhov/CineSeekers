@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Add click event listener to the button (Timur)
+  // Add click event listener to the button (Timur!)
   fetchMoviesButton.addEventListener("click", fetchMovies);
 });
 
