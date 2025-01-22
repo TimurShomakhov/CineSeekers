@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Add click event listener to the button (Timur)
-    fetchMoviesButton.addEventListener("click", fetchMovies);
+    // fetchMoviesButton.addEventListener("click", fetchMovies);
 });
 
 // Section: Popular Movies
@@ -138,18 +138,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 // End of section: Popular Movies
 
 // Start Section search results: Search results
-
 const renderResults = (results) => {
-    console.log("Rendering Results:", results); // Debug-Ausgabe
+    console.log("Rendering Results:", results); // Debugging output
     const resultsContainer = document.querySelector("#resultCards");
+    if (!resultsContainer) {
+        console.error("#resultCards not found in the DOM");
+        return;
+    }
+
     resultsContainer.innerHTML = ""; // Clear existing content
 
     results.forEach((result) => {
-        console.log("Rendering Movie:", result); // Zeigt jedes einzelne Resultat
         const resultItem = document.createElement("div");
         resultItem.classList = "bg-white rounded-lg p-4 flex gap-4";
 
-        // Erstelle Inhalte...
+        // Movie poster
         const imgContainer = document.createElement("div");
         imgContainer.classList = "flex-shrink-0 mx-auto md:mx-0";
         const img = document.createElement("img");
@@ -157,22 +160,43 @@ const renderResults = (results) => {
         img.src = result.poster_path
             ? `https://image.tmdb.org/t/p/w500${result.poster_path}`
             : "https://via.placeholder.com/150";
-        img.alt = result.title;
+        img.alt = result.title || "No title";
         imgContainer.appendChild(img);
 
+        // Movie details
         const resultContent = document.createElement("div");
         resultContent.classList = "flex-1";
 
         const resultTitle = document.createElement("h3");
         resultTitle.classList = "text-lg font-semibold text-gray-900 mb-2";
-        resultTitle.textContent = result.title;
+        resultTitle.textContent = result.title || "No title";
 
+        const resultOverview = document.createElement("p");
+        resultOverview.classList = "text-sm text-gray-700 leading-relaxed";
+        resultOverview.textContent =
+            result.overview || "No overview available.";
+
+        // Add to Favorites Button
+        const addToFavoritesButton = document.createElement("button");
+        addToFavoritesButton.classList =
+            "mt-4 bg-red-500 text-white font-medium py-2 px-4 rounded-md hover:bg-red-600";
+        addToFavoritesButton.textContent = "Add to favorites";
+
+        console.log("Button Created:", addToFavoritesButton);
+
+        // Append details and button
         resultContent.appendChild(resultTitle);
+        resultContent.appendChild(resultOverview);
+        resultContent.appendChild(addToFavoritesButton);
+        console.log("Button Appended to Result Content:", resultContent); // Debugging: Prüfen, ob Button angehängt wurde
+
         resultItem.appendChild(imgContainer);
         resultItem.appendChild(resultContent);
 
         resultsContainer.appendChild(resultItem);
     });
+
+    console.log("Rendering Completed"); // Debugging: Rendering abgeschlossen
 };
 
 // Search logic
@@ -256,14 +280,28 @@ document.addEventListener("DOMContentLoaded", () => {
             resultOverview.textContent =
                 result.overview || "No overview available.";
 
+            // Add to Favorites Button
+            const addToFavoritesButton = document.createElement("button");
+            addToFavoritesButton.classList =
+                "mt-4 bg-red-500 text-white font-medium py-2 px-4 rounded-md hover:bg-red-600";
+            addToFavoritesButton.textContent = "Add to favorites";
+
+            // Debugging: Check if button is created and appended
+            console.log("Button Created:", addToFavoritesButton);
+
+            // Append all elements in the correct order
             resultContent.appendChild(resultTitle);
             resultContent.appendChild(resultOverview);
+            resultContent.appendChild(addToFavoritesButton);
 
             resultItem.appendChild(imgContainer);
             resultItem.appendChild(resultContent);
 
             resultsContainer.appendChild(resultItem);
+            console.log("Result Item Appended to Container:", resultItem);
         });
+
+        console.log("Rendering Completed"); // Debugging: Rendering abgeschlossen
     };
 
     // Function to handle search and render results
@@ -296,6 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Show the results section
         resultsSection.classList.remove("hidden");
     };
+
     // Allow "Enter" key to trigger search
     searchInput.addEventListener("keypress", (event) => {
         if (event.key === "Enter") {
