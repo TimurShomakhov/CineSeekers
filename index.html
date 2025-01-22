@@ -21,6 +21,16 @@
             .hover-underline-animation:hover::after {
                 width: 100%;
             }
+
+            /* Smooth scrolling for better user experience */
+            #popular-movie-container {
+                scroll-behavior: smooth;
+            }
+
+            /* 5 display 5 movies at once */
+            .movie-card {
+                flex: 0 0 15%; 
+            }
         </style>
     </head>
 
@@ -36,7 +46,7 @@
                             class="w-16"
                             src="images/CineSeekers_Logo_PNG_Based.svg"
                             alt="Cine Seekers Logo" />
-                        <figcaption class="lg:text-4xl sm:text-4xl font-bold">
+                        <figcaption class="lg:text-4xl sm:text-4xl text-2xl font-bold">
                             Cine Seekers
                         </figcaption>
                     </figure>
@@ -69,16 +79,127 @@
         </header>
 
         <main>
+            <!-- Start hero section -->
+            <section id="hero" class=" bg-black py-8 text-center">
+
+              <div id="hero" class="container mx-auto p-4 max-w-prose text-wrap">
+                  <!-- headline container -->
+                  <div class="mb-6">
+
+                    <article class= "text-white break-words">
+                      <h1 class="text-5xl font-bold">
+                          Welcome!
+                      </h1>
+                      <p class="mx-auto mt-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod illum asperiores, 
+                        accusamus praesentium perferendis nemo provident magnam consequuntur aspernatur 
+                        totam fuga mollitia sequi ducimus corporis quis aliquid distinctio, debitis voluptas.
+                    </p>
+                    </article>
+                  </div>
+
+                  <!-- Keyword Search -->
+
+                  <section id="search-form" class="p-6 bg-slate-50 rounded-lg max-w-max mx-auto">
+                    <form class="flex flex-col items-center space-y-2">
+                        <h4 class="font-semibold text-gray-800">
+                            Find Movies by Buzzword or Title
+                        </h4>
+                        <!-- Input field -->
+                        <input 
+                            type="text" 
+                            id="search" 
+                            placeholder="Insert Keyword or Title"
+                            class="p-1 border border-gray-300 rounded-md text-lg 
+                            focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent 
+                            w-full max-w-xs" 
+                        />
+                        <!-- Search button -->
+                        <button 
+                            type="submit" 
+                            class="bg-red-500 text-white font-medium py-2 px-6 rounded-md hover:bg-red-600">
+                            Search
+                        </button>
+                                        </form>
+                                      <!-- Filter options -->
+                                      <div class="flex flex-col gap-4 w-full max-w-xs">
+                                        <!-- Genres -->
+                                        <label class="font-medium text-gray-700">Filter by Genre:</label>
+                                        <select id="genre-filter" class="p-2 border border-gray-300 rounded-md">
+                                          <option value="">All Genres</option>
+                                          <option value="Action">Action</option>
+                                          <option value="Comedy">Comedy</option>
+                                          <option value="Drama">Drama</option>
+                                          <option value="Horror">Horror</option>
+                                          <option value="Sci-Fi">Sci-Fi</option>
+                                        </select>
+                                  
+                                        <!-- Actors -->
+                                        <label class="font-medium text-gray-700">Filter by Actor:</label>
+                                        <input 
+                                          type="text" 
+                                          id="actor-filter" 
+                                          placeholder="Enter Actor Name"
+                                          class="p-2 border border-gray-300 rounded-md"
+                                        />
+                                  
+                                        <!-- Years -->
+                                        <label class="font-medium text-gray-700">Filter by Year:</label>
+                                        <input 
+                                          type="number" 
+                                          id="year-filter" 
+                                          placeholder="Enter Release Year"
+                                          class="p-2 border border-gray-300 rounded-md"
+                                        />
+                                      </div>
+                                  
+                                      <!-- Search button -->
+                                      <button 
+                                        type="button" 
+                                        id="filter-button"
+                                        class="bg-red-500 text-white font-medium py-2 px-6 rounded-md hover:bg-red-600">
+                                        Apply Filters
+                                      </button>
+                                    </form>
+                                    </section>
+                                      </div>
+                              </section>
+                    </form>
+                </section>
+                  </div>
+          </section>
+            <!-- End hero section -->
+
             <!-- Start section popular movies -->
-            <section id="popular">
-                <!-- Retrieve and display a list of popular movies from TMDB API. -->
+            <section class="container mx-auto" id="popular">
+                <div class="flex flex-col">
+                    <h2 class="text-2xl font-bold my-4">
+                        Popular Movies
+                    </h2>
+                    <!-- slideshow container -->
+                    <div class="relative">
+                        <div 
+                        id="popular-movie-container"
+                        class="flex overflow-x-scroll space-x-4">
+                        <!-- Retrieve and display a list of popular movies from TMDB API. -->
+                        </div>
+
+                        <!-- slideshow buttons -->
+                        <button id="prev" class="absolute hidden border left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-4 py-2 rounded-full">
+                            Prev
+                        </button>
+                        <button id="next" class="absolute hidden border right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-4 py-2 rounded-full">
+                            Next
+                        </button>
+                    </div>
+                </div>
             </section>
             <!-- End section popular movies -->
 
             <!-- Start section results -->
             <section id="results" class="bg-black py-8">
                 <!-- content wrapper -->
-                <div id="results-container" class="container mx-auto px-4">
+                <div id="results-container" class="container mx-auto">
                     <!-- headline container -->
                     <div class="mb-6">
                         <h2 class="text-2xl font-bold text-white">
@@ -188,7 +309,7 @@
             <!-- Footer container -->
             <div class="flex container mx-auto my-2">
                 <div class="flex-col w-2/5">
-                    <p class="text-4xl font-bold">Cine Seekers</p>
+                    <p class="lg:text-4xl sm:text-4xl text-2xl font-bold">Cine Seekers</p>
                     <div class="my-4 flex flex-wrap gap-6">
                         <img
                             class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3]"
@@ -267,4 +388,5 @@
             </div>
         </footer>
     </body>
+    <script src="javascript.js"></script>
 </html>
