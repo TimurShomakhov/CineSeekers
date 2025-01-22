@@ -286,6 +286,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 "mt-4 bg-red-500 text-white font-medium py-2 px-4 rounded-md hover:bg-red-600";
             addToFavoritesButton.textContent = "Add to favorites";
 
+            // Add to favorites function
+            addToFavoritesButton.addEventListener("click", () => {
+                const favorites =
+                    JSON.parse(localStorage.getItem("favorites")) || [];
+                favorites.push(result);
+                localStorage.setItem("favorites", JSON.stringify(favorites));
+                alert(`${result.title} has been added to your favorites`);
+            });
+
             // Debugging: Check if button is created and appended
             console.log("Button Created:", addToFavoritesButton);
 
