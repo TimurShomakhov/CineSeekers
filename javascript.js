@@ -135,3 +135,31 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 // End of section: Popular Movies
+
+document.querySelector('#search-form form').addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent the form from reloading the page
+
+  const keyword = document.querySelector('#search').value.trim();
+  const genre = document.querySelector('#genre-filter').value;
+  const actor = document.querySelector('#actor-filter').value.trim();
+  const year = document.querySelector('#year-filter').value;
+
+  // Combine the filters into a search query
+  const searchQuery = {
+    keyword,
+    genre,
+    actor,
+    year,
+  };
+
+  console.log('Search Query:', searchQuery);
+
+  // Use the searchQuery object to fetch filtered results from your API
+  // Example:
+  // fetch(`/api/movies?keyword=${keyword}&genre=${genre}&actor=${actor}&year=${year}`)
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     // Update the UI with the search results
+  //   })
+  //   .catch(error => console.error('Error:', error));
+});
