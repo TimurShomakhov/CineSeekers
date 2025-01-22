@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.tailwindcss.com"></script>
-        <title>Cine Seekers</title>
+        <title>Cine Seekers | My Journal</title>
         <style>
             /* Custom Animation for the underline effect */
             .hover-underline-animation::after {
@@ -36,7 +36,7 @@
                             class="w-16"
                             src="images/CineSeekers_Logo_PNG_Based.svg"
                             alt="Cine Seekers Logo" />
-                        <figcaption class="lg:text-4xl sm:text-4xl text-2xl font-bold">
+                        <figcaption class="lg:text-4xl sm:text-4xl font-bold">
                             Cine Seekers
                         </figcaption>
                     </figure>
@@ -45,11 +45,11 @@
                     <ul
                         class="list-none flex gap-4 lg:gap-16 items-center font-semibold">
                         <li
-                            class="relative hover-underline-animation font-black">
+                            class="relative hover-underline-animation font-normal">
                             <a href="index.html" class="text-gray-800">Home</a>
                         </li>
                         <li
-                            class="relative hover-underline-animation font-normal">
+                            class="relative hover-underline-animation font-black">
                             <a href="journal.html" class="text-gray-800">
                                 Journal
                             </a>
@@ -69,85 +69,23 @@
         </header>
 
         <main>
-            <!-- Start hero section -->
-            <section id="hero" class=" bg-black py-8 text-center">
-
-              <div id="hero" class="container mx-auto p-4 max-w-prose text-wrap">
-                  <!-- headline container -->
-                  <div class="mb-6">
-
-                    <article class= "text-white break-words">
-                      <h1 class="text-5xl font-bold">
-                          Welcome!
-                      </h1>
-                      <p class="mx-auto mt-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod illum asperiores, 
-                        accusamus praesentium perferendis nemo provident magnam consequuntur aspernatur 
-                        totam fuga mollitia sequi ducimus corporis quis aliquid distinctio, debitis voluptas.
-                    </p>
-                    </article>
-                  </div>
-
-                  <!-- Keyword Search -->
-
-                  <section id="search-form" class="p-6 bg-slate-50 rounded-lg max-w-max mx-auto">
-                    <form class="flex flex-col items-center space-y-2">
-                        <h4 class="font-semibold text-gray-800">
-                            Find Movies by Buzzword or Title
-                        </h4>
-                        <!-- Input field -->
-                        <input 
-                            type="text" 
-                            id="search" 
-                            placeholder="Insert Keyword or Title"
-                            class="p-1 border border-gray-300 rounded-md text-lg 
-                            focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent 
-                            w-full max-w-xs" 
-                        />
-                        <!-- Search button -->
-                        <button 
-                            type="submit" 
-                            class="bg-red-500 text-white font-medium py-2 px-6 rounded-md hover:bg-red-600">
-                            Search
-                        </button>
-                    </form>
-                </section>
-                  </div>
-          </section>
-            <!-- End hero section -->
-
-            <!-- Start section popular movies -->
-            <section class="container mx-auto" id="popular">
-                <div class="flex flex-col">
-                    <h2 class="text-2xl font-bold">
-                        Popular Movies
-                    </h2>
-                    <div 
-                    id="popular-movie-container"
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    <!-- Retrieve and display a list of popular movies from TMDB API. -->
-                    </div>
-                </div>
-            </section>
-            <!-- End section popular movies -->
-
-            <!-- Start section results -->
-            <section id="results" class="bg-black py-8">
+            <!-- Start section favorits -->
+            <section id="favorits" class="bg-black py-8">
                 <!-- content wrapper -->
-                <div id="results-container" class="container mx-auto">
+                <div id="fav-container" class="container mx-auto px-4">
                     <!-- headline container -->
                     <div class="mb-6">
                         <h2 class="text-2xl font-bold text-white">
-                            Search Results
+                            My Favorits
                         </h2>
                     </div>
-                    <!-- result container -->
+                    <!-- favorits container -->
                     <div
-                        id="resultCards"
+                        id="favCards"
                         class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- start result item -->
+                        <!-- start favorits item -->
                         <div
-                            id="resultItem"
+                            id="favItem"
                             class="bg-white rounded-lg p-4 flex gap-4">
                             <div class="flex-shrink-0 mx-auto md:mx-0">
                                 <img
@@ -185,13 +123,14 @@
                                 </div>
                                 <button
                                     class="mt-4 bg-red-500 text-white font-medium py-2 px-4 rounded-md hover:bg-red-600">
-                                    Add to favorites
+                                    Remove from favorites
                                 </button>
                             </div>
                         </div>
-                        <!-- end result item -->
+                        <!-- end favorits item -->
+                        <!-- start favorits item -->
                         <div
-                            id="resultItem"
+                            id="favItem"
                             class="bg-white rounded-lg p-4 flex gap-4">
                             <div class="flex-shrink-0 mx-auto md:mx-0">
                                 <img
@@ -229,22 +168,22 @@
                                 </div>
                                 <button
                                     class="mt-4 bg-red-500 text-white font-medium py-2 px-4 rounded-md hover:bg-red-600">
-                                    Add to favorites
+                                    Remove from favorites
                                 </button>
                             </div>
                         </div>
-                        <!-- end result item -->
+                        <!-- end favorits item -->
                     </div>
                 </div>
             </section>
-            <!-- End section results -->
+            <!-- End section favorits -->
         </main>
 
         <footer class="border-t">
             <!-- Footer container -->
             <div class="flex container mx-auto my-2">
                 <div class="flex-col w-2/5">
-                    <p class="lg:text-4xl sm:text-4xl text-2xl font-bold">Cine Seekers</p>
+                    <p class="text-4xl font-bold">Cine Seekers</p>
                     <div class="my-4 flex flex-wrap gap-6">
                         <img
                             class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3]"
