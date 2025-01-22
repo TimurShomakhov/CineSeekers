@@ -48,9 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Section: Popular Movies
 
-// API-KEY
-const API_KEY = 'DEIN_API_KEY';
-
 // Base URL TMDB API
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/"; 
 
@@ -94,7 +91,7 @@ const displayPopMovs = (movie, container) => {
 // Function to fetch movies
 const fetchPopMovs = async () => {
     try {
-        const res = await fetch (API_URL);
+        const res = await fetch ('https://api.themoviedb.org/3/movie/popular?api_key=e1db7731774da84825c6ecc635ee0aea&language=en-US&page=1');
         if (!res.ok) throw new Error (`${res.status}. Something went wrong!`);
         const data = await res.json();
         return data;
