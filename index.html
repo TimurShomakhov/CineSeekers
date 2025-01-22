@@ -96,18 +96,18 @@
 
 <!-- Keyword Search with Filters -->
 <section id="search-form" class="p-6 bg-slate-50 rounded-lg max-w-max mx-auto">
-  <form class="flex flex-col items-center space-y-4">
+    <form class="flex flex-col items-center space-y-4">   
     <h4 class="font-semibold text-gray-800">
-      Movie Search
+        Movie Search
     </h4>
     <!-- Input field for keyword -->
     <input 
-      type="text" 
-      id="search" 
-      placeholder="Title"
-      class="p-1 border border-gray-300 rounded-md text-lg 
-      focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent 
-      w-full max-w-xs" 
+        type="text" 
+        id="search" 
+        placeholder="Title"
+        class="p-1 border border-gray-300 rounded-md text-lg 
+        focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent 
+        w-full max-w-xs" 
     />
 
     <!-- Dropdown for genres -->
@@ -155,6 +155,46 @@
       Search
     </button>
   </form>
+                  <!-- Filter options -->
+                  <div class="flex flex-col gap-4 w-full max-w-xs">
+                    <!-- Genres -->
+                    <label class="font-medium text-gray-700">Filter by Genre:</label>
+                    <select id="genre-filter" class="p-2 border border-gray-300 rounded-md">
+                      <option value="">All Genres</option>
+                      <option value="Action">Action</option>
+                      <option value="Comedy">Comedy</option>
+                      <option value="Drama">Drama</option>
+                      <option value="Horror">Horror</option>
+                      <option value="Sci-Fi">Sci-Fi</option>
+                    </select>
+              
+                    <!-- Actors -->
+                    <label class="font-medium text-gray-700">Filter by Actor:</label>
+                    <input 
+                      type="text" 
+                      id="actor-filter" 
+                      placeholder="Enter Actor Name"
+                      class="p-2 border border-gray-300 rounded-md"
+                    />
+              
+                    <!-- Years -->
+                    <label class="font-medium text-gray-700">Filter by Year:</label>
+                    <input 
+                      type="number" 
+                      id="year-filter" 
+                      placeholder="Enter Release Year"
+                      class="p-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+              
+                  <!-- Search button -->
+                  <button 
+                    type="button" 
+                    id="filter-button"
+                    class="bg-red-500 text-white font-medium py-2 px-6 rounded-md hover:bg-red-600">
+                    Apply Filters
+                  </button>
+                </form>
 </section>
 
             <!-- End hero section -->

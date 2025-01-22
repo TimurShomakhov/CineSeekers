@@ -136,30 +136,27 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 // End of section: Popular Movies
 
-document.querySelector('#search-form form').addEventListener('submit', (event) => {
-  event.preventDefault(); // Prevent the form from reloading the page
 
-  const keyword = document.querySelector('#search').value.trim();
-  const genre = document.querySelector('#genre-filter').value;
-  const actor = document.querySelector('#actor-filter').value.trim();
-  const year = document.querySelector('#year-filter').value;
+document.getElementById("filter-button").addEventListener("click", () => {
+  const genre = document.getElementById("genre-filter").value;
+  const actor = document.getElementById("actor-filter").value.toLowerCase();
+  const year = document.getElementById("year-filter").value;
 
-  // Combine the filters into a search query
-  const searchQuery = {
-    keyword,
-    genre,
-    actor,
-    year,
-  };
+  const resultItems = document.querySelectorAll("#resultItem");
 
-  console.log('Search Query:', searchQuery);
+  resultItems.forEach(item => {
+    const itemGenre = item.querySelector("span:nth-child(2)").textContent;
+    const itemActors = item.querySelector(".text-sm").textContent.toLowerCase();
+    const itemYear = item.querySelector("span:nth-child(1)").textContent.split("/").pop();
 
-  // Use the searchQuery object to fetch filtered results from your API
-  // Example:
-  // fetch(`/api/movies?keyword=${keyword}&genre=${genre}&actor=${actor}&year=${year}`)
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     // Update the UI with the search results
-  //   })
-  //   .catch(error => console.error('Error:', error));
+    const matchesGenre = !genre || itemGenre.includes(genre);
+    const matchesActor = !actor || itemActors.includes(actor);
+    const matchesYear = !year || itemYear.includes(year);
+
+    if (matchesGenre && matchesActor && matchesYear) {
+      item.style.display = "flex"; // Show matching item
+    } else {
+      item.style.display = "none"; // Hide non-matching item
+    }
+  });
 });
