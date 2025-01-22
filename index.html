@@ -14,7 +14,7 @@
                 left: 0;
                 width: 0;
                 height: 2px;
-                background-color: #000000;
+                background-color: white;
                 transition: width 0.4s ease-in-out;
             }
 
@@ -35,16 +35,16 @@
     </head>
 
     <body>
-        <header>
+        <header class="bg-[rgba(0,0,0,0.7)] text-white">
             <!-- Start of navigation -->
-            <nav class="border-b">
+            <nav>
                 <!-- Nav container -->
-                <div class="container mx-auto my-1 flex justify-between">
+                <div class="container mx-auto flex justify-between">
                     <!-- Logo -->
                     <figure class="flex justify-center gap-2 items-center">
                         <img
-                            class="w-16"
-                            src="images/CineSeekers_Logo_PNG_Based.svg"
+                            class="w-16 py-3"
+                            src="images/CineSeekers_Logo_PNG_Based-inverted.svg"
                             alt="Cine Seekers Logo" />
                         <figcaption class="lg:text-4xl sm:text-4xl text-2xl font-bold">
                             Cine Seekers
@@ -53,24 +53,24 @@
 
                     <!-- Nav links -->
                     <ul
-                        class="list-none flex gap-4 lg:gap-16 items-center font-semibold">
+                        class="list-none flex gap-4 lg:gap-16 items-center font-semibold text-light-grey">
                         <li
-                            class="relative hover-underline-animation font-black">
-                            <a href="index.html" class="text-gray-800">Home</a>
+                            class="relative hover-underline-animation">
+                            <a href="index.html">Home</a>
                         </li>
                         <li
                             class="relative hover-underline-animation font-normal">
-                            <a href="journal.html" class="text-gray-800">
+                            <a href="journal.html">
                                 Journal
                             </a>
                         </li>
                         <li
                             class="relative hover-underline-animation font-normal">
-                            <a href="" class="text-gray-800">About</a>
+                            <a href="" >About</a>
                         </li>
                         <li
                             class="relative hover-underline-animation font-normal">
-                            <a href="" class="text-gray-800">Contact</a>
+                            <a href="">Contact</a>
                         </li>
                     </ul>
                 </div>
