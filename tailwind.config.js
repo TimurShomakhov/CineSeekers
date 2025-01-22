@@ -12,7 +12,7 @@ module.exports = {
           'soft-red': '#DC143C',
           'deep-blue': '#191970',
           'silver': '#C0C0C0',
-          'transparent-black': 'rgba(0, 0, 0, 0.7)',
+          'transparent-black': 'rgba(0, 0, 0, 0.3)',
         },
       },
     },
