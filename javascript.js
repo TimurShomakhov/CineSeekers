@@ -46,3 +46,27 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchMoviesButton.addEventListener("click", fetchMovies);
 });
 
+
+document.getElementById("filter-button").addEventListener("click", () => {
+  const genre = document.getElementById("genre-filter").value;
+  const actor = document.getElementById("actor-filter").value.toLowerCase();
+  const year = document.getElementById("year-filter").value;
+
+  const resultItems = document.querySelectorAll("#resultItem");
+
+  resultItems.forEach(item => {
+    const itemGenre = item.querySelector("span:nth-child(2)").textContent;
+    const itemActors = item.querySelector(".text-sm").textContent.toLowerCase();
+    const itemYear = item.querySelector("span:nth-child(1)").textContent.split("/").pop();
+
+    const matchesGenre = !genre || itemGenre.includes(genre);
+    const matchesActor = !actor || itemActors.includes(actor);
+    const matchesYear = !year || itemYear.includes(year);
+
+    if (matchesGenre && matchesActor && matchesYear) {
+      item.style.display = "flex"; // Show matching item
+    } else {
+      item.style.display = "none"; // Hide non-matching item
+    }
+  });
+});
