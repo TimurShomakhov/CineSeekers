@@ -36,7 +36,7 @@
                             class="w-16"
                             src="images/CineSeekers_Logo_PNG_Based.svg"
                             alt="Cine Seekers Logo" />
-                        <figcaption class="lg:text-4xl sm:text-4xl font-bold">
+                        <figcaption class="lg:text-4xl sm:text-4xl text-2xl font-bold">
                             Cine Seekers
                         </figcaption>
                     </figure>
@@ -117,15 +117,24 @@
             <!-- End hero section -->
 
             <!-- Start section popular movies -->
-            <section id="popular">
-                <!-- Retrieve and display a list of popular movies from TMDB API. -->
+            <section class="container mx-auto" id="popular">
+                <div class="flex flex-col">
+                    <h2 class="text-2xl font-bold">
+                        Popular Movies
+                    </h2>
+                    <div 
+                    id="popular-movie-container"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Retrieve and display a list of popular movies from TMDB API. -->
+                    </div>
+                </div>
             </section>
             <!-- End section popular movies -->
 
             <!-- Start section results -->
             <section id="results" class="bg-black py-8">
                 <!-- content wrapper -->
-                <div id="results-container" class="container mx-auto px-4">
+                <div id="results-container" class="container mx-auto">
                     <!-- headline container -->
                     <div class="mb-6">
                         <h2 class="text-2xl font-bold text-white">
@@ -235,7 +244,7 @@
             <!-- Footer container -->
             <div class="flex container mx-auto my-2">
                 <div class="flex-col w-2/5">
-                    <p class="text-4xl font-bold">Cine Seekers</p>
+                    <p class="lg:text-4xl sm:text-4xl text-2xl font-bold">Cine Seekers</p>
                     <div class="my-4 flex flex-wrap gap-6">
                         <img
                             class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3]"
@@ -314,4 +323,5 @@
             </div>
         </footer>
     </body>
+    <script src="javascript.js"></script>
 </html>
