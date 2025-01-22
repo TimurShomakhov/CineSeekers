@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.tailwindcss.com"></script>
-        <title>Cine Seekers</title>
+        <title>Cine Seekers | My Journal</title>
         <style>
             /* Custom Animation for the underline effect */
             .hover-underline-animation::after {
@@ -45,11 +45,11 @@
                     <ul
                         class="list-none flex gap-4 lg:gap-16 items-center font-semibold">
                         <li
-                            class="relative hover-underline-animation font-black">
+                            class="relative hover-underline-animation font-normal">
                             <a href="index.html" class="text-gray-800">Home</a>
                         </li>
                         <li
-                            class="relative hover-underline-animation font-normal">
+                            class="relative hover-underline-animation font-black">
                             <a href="journal.html" class="text-gray-800">
                                 Journal
                             </a>
@@ -69,29 +69,23 @@
         </header>
 
         <main>
-            <!-- Start section popular movies -->
-            <section id="popular">
-                <!-- Retrieve and display a list of popular movies from TMDB API. -->
-            </section>
-            <!-- End section popular movies -->
-
-            <!-- Start section results -->
-            <section id="results" class="bg-black py-8">
+            <!-- Start section favorits -->
+            <section id="favorits" class="bg-black py-8">
                 <!-- content wrapper -->
-                <div id="results-container" class="container mx-auto px-4">
+                <div id="fav-container" class="container mx-auto px-4">
                     <!-- headline container -->
                     <div class="mb-6">
                         <h2 class="text-2xl font-bold text-white">
-                            Search Results
+                            My Favorits
                         </h2>
                     </div>
-                    <!-- result container -->
+                    <!-- favorits container -->
                     <div
-                        id="resultCards"
+                        id="favCards"
                         class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- start result item -->
+                        <!-- start favorits item -->
                         <div
-                            id="resultItem"
+                            id="favItem"
                             class="bg-white rounded-lg p-4 flex gap-4">
                             <div class="flex-shrink-0 mx-auto md:mx-0">
                                 <img
@@ -129,13 +123,14 @@
                                 </div>
                                 <button
                                     class="mt-4 bg-red-500 text-white font-medium py-2 px-4 rounded-md hover:bg-red-600">
-                                    Add to favorites
+                                    Remove from favorites
                                 </button>
                             </div>
                         </div>
-                        <!-- end result item -->
+                        <!-- end favorits item -->
+                        <!-- start favorits item -->
                         <div
-                            id="resultItem"
+                            id="favItem"
                             class="bg-white rounded-lg p-4 flex gap-4">
                             <div class="flex-shrink-0 mx-auto md:mx-0">
                                 <img
@@ -173,15 +168,15 @@
                                 </div>
                                 <button
                                     class="mt-4 bg-red-500 text-white font-medium py-2 px-4 rounded-md hover:bg-red-600">
-                                    Add to favorites
+                                    Remove from favorites
                                 </button>
                             </div>
                         </div>
-                        <!-- end result item -->
+                        <!-- end favorits item -->
                     </div>
                 </div>
             </section>
-            <!-- End section results -->
+            <!-- End section favorits -->
         </main>
 
         <footer class="border-t">
