@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
     if (favorites.length === 0) {
-        favoritesContainer.innerHTML = "<p class="text-white">No favorites added yet.</p>";
+        favoritesContainer.innerHTML = `"<p class="text-white">No favorites added yet.</p>`;
         return;
     }
 
