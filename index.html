@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="shortcut icon"
+    href="Favicon//favicon-32x32.png"
+    type="image/png"
+/>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Cine Seekers</title>
     <style>
@@ -18,318 +23,247 @@
         transition: width 0.4s ease-in-out;
       }
 
-      .hover-underline-animation:hover::after {
-        width: 100%;
-      }
-    </style>
-  </head>
+            .hover-underline-animation:hover::after {
+                width: 100%;
+            }
 
-  <body>
-    <header>
-      <!-- Start of navigation -->
-      <nav class="border-b">
-        <!-- Nav container -->
-        <div class="container mx-auto my-1 flex justify-between">
-          <!-- Logo -->
-          <figure class="flex justify-center gap-2 items-center">
-            <img
-              class="w-16"
-              src="images/CineSeekers_Logo_PNG_Based.svg"
-              alt="Cine Seekers Logo"
-            />
-            <figcaption class="lg:text-4xl sm:text-4xl font-bold">
-              Cine Seekers
-            </figcaption>
-          </figure>
+            /* Smooth scrolling for better user experience */
+            #popular-movie-container {
+                scroll-behavior: smooth;
+            }
 
-          <!-- Nav links -->
-          <ul class="list-none flex gap-4 lg:gap-16 items-center font-semibold">
-            <li class="relative hover-underline-animation font-black">
-              <a href="index.html" class="text-gray-800">Home</a>
-            </li>
-            <li class="relative hover-underline-animation font-normal">
-              <a href="journal.html" class="text-gray-800"> Journal </a>
-            </li>
-            <li class="relative hover-underline-animation font-normal">
-              <a href="" class="text-gray-800">About</a>
-            </li>
-            <li class="relative hover-underline-animation font-normal">
-              <a href="" class="text-gray-800">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- End of navigation -->
-    </header>
+            /* 5 display 5 movies at once */
+            .movie-card {
+                flex: 0 0 15%;
+            }
+        </style>
+    </head>
+
+    <body class="bg-cover bg-center h-screen" 
+    style="background-image: 
+    url('https://images.unsplash.com/photo-1620145648299-f926ac0a9470?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');" >
+        <header class="bg-[rgba(0,0,0,0.3)] text-white">
+            <!-- Start of navigation -->
+            <nav>
+                <!-- Nav container -->
+                <div class="container mx-auto my-1 flex justify-between">
+                    <!-- Logo -->
+                    <figure class="flex justify-center gap-2 items-center">
+                        <img
+                            class="w-16 py-3"
+                            src="images/CineSeekers_Logo_PNG_Based-inverted.svg"
+                            alt="Cine Seekers Logo" />
+                        <figcaption class="lg:text-4xl sm:text-4xl font-bold">
+                            Cine Seekers
+                        </figcaption>
+                    </figure>
+
+                    <!-- Nav links -->
+                    <ul
+                        class="list-none flex gap-4 lg:gap-16 items-center text-light-grey font-semibold">
+                        <li
+                            class="relative hover-underline-animation font-black">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li
+                            class="relative hover-underline-animation font-normal">
+                            <a href="journal.html">
+                                Journal
+                            </a>
+                        </li>
+                        <li
+                            class="relative hover-underline-animation font-normal">
+                            <a href="">About</a>
+                        </li>
+                        <li
+                            class="relative hover-underline-animation font-normal">
+                            <a href="">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- End of navigation  -->
+        </header>
 
         <main>
             <!-- Start hero section -->
-            <section id="hero" class=" bg-black py-8 text-center">
+            <section id="hero" class="py-8 text-center">
+                <div
+                    id="hero"
+                    class="container mx-auto p-4 max-w-prose text-wrap">
+                    <!-- headline container -->
+                    <div class="mb-6">
+                        <article class="text-white break-words">
+                            <h1 class="text-5xl font-bold">Welcome!</h1>
+                            <p class="mx-auto mt-4">
+                                Discover the magic of cinema with Cine Seekers! Dive into an extensive library of movies, find hidden gems, and explore the latest blockbusters. Whether you’re searching for a classic masterpiece, a family-friendly adventure, or a gripping thriller, 
+                                Cine Seekers is your gateway to the cinematic universe. Enter a keyword or title to begin your journey!
+                            </p>
+                        </article>
+                    </div>
 
-              <div id="hero" class="container mx-auto p-4 max-w-prose text-wrap">
-                  <!-- headline container -->
-                  <div class="mb-6">
+          <!-- Keyword Search -->
 
-                    <article class= "text-white break-words">
-                      <h1 class="text-5xl font-bold">
-                          Welcome!
-                      </h1>
-                      <p class="mx-auto mt-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod illum asperiores, 
-                        accusamus praesentium perferendis nemo provident magnam consequuntur aspernatur 
-                        totam fuga mollitia sequi ducimus corporis quis aliquid distinctio, debitis voluptas.
-                    </p>
-                    </article>
-                  </div>
-
-                  <!-- Keyword Search -->
-
-                  <section id="search-form" class="p-6 bg-slate-50 rounded-lg max-w-max mx-auto">
-                    <form class="flex flex-col items-center space-y-2">
-                        <h4 class="font-semibold text-gray-800">
-                            Find Movies by Buzzword or Title
-                        </h4>
-                        <!-- Input field -->
-                        <input 
-                            type="text" 
-                            id="search" 
-                            placeholder="Insert Keyword or Title"
-                            class="p-1 border border-gray-300 rounded-md text-lg 
-                            focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent 
-                            w-full max-w-xs" 
-                        />
-                        <!-- Search button -->
-                        <button 
-                            type="submit" 
-                            class="bg-red-500 text-white font-medium py-2 px-6 rounded-md hover:bg-red-600">
-                            Search
-                        </button>
-                    </form>
-                  <!-- Filter options -->
-                  <div class="flex flex-col gap-4 w-full max-w-xs">
-                    <!-- Genres -->
-                    <label class="font-medium text-gray-700">Filter by Genre:</label>
-                    <select id="genre-filter" class="p-2 border border-gray-300 rounded-md">
-                      <option value="">All Genres</option>
-                      <option value="Action">Action</option>
-                      <option value="Comedy">Comedy</option>
-                      <option value="Drama">Drama</option>
-                      <option value="Horror">Horror</option>
-                      <option value="Sci-Fi">Sci-Fi</option>
-                    </select>
-              
-                    <!-- Actors -->
-                    <label class="font-medium text-gray-700">Filter by Actor:</label>
-                    <input 
-                      type="text" 
-                      id="actor-filter" 
-                      placeholder="Enter Actor Name"
-                      class="p-2 border border-gray-300 rounded-md"
-                    />
-              
-                    <!-- Years -->
-                    <label class="font-medium text-gray-700">Filter by Year:</label>
-                    <input 
-                      type="number" 
-                      id="year-filter" 
-                      placeholder="Enter Release Year"
-                      class="p-2 border border-gray-300 rounded-md"
-                    />
-                  </div>
-              
-                  <!-- Search button -->
-                  <button 
-                    type="button" 
-                    id="filter-button"
-                    class="bg-red-500 text-white font-medium py-2 px-6 rounded-md hover:bg-red-600">
-                    Apply Filters
-                  </button>
-                </form>
-                </section>
-                  </div>
+          <section
+            id="search-form"
+            class="p-6 bg-slate-50 rounded-lg max-w-max mx-auto"
+          >
+            <form class="flex flex-col items-center space-y-2">
+              <h4 class="font-semibold text-gray-800">
+                Find Movies by Buzzword or Title
+              </h4>
+              <!-- Input field -->
+              <input
+                type="text"
+                id="search"
+                placeholder="Insert Keyword or Title"
+                class="p-1 border border-gray-300 rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent w-full max-w-xs"
+              />
+              <!-- Search button -->
+              <button
+                id="searchBtn"
+                type="submit"
+                class="bg-red-500 text-white font-medium py-2 px-6 rounded-md hover:bg-red-600"
+              >
+                Search
+              </button>
+            </form>
           </section>
-            <!-- End hero section -->
+        </div>
+      </section>
+      <!-- End hero section -->
 
-            <!-- Start section popular movies -->
-            <section id="popular">
-                <!-- Retrieve and display a list of popular movies from TMDB API. -->
-            </section>
-            <!-- End section popular movies -->
+      <!-- Start section popular movies -->
+      <section class="bg-[rgba(0,0,0,0.3)] text-white py-2 px-6 rounded-md container mx-auto mb-2 " id="popular">
+        <div class="flex flex-col">
+          <h2 class="text-2xl font-bold my-4">Popular Movies</h2>
+          <!-- slideshow container -->
+          <div class="relative">
+            <div
+              id="popular-movie-container"
+              class="flex overflow-x-scroll space-x-4"
+            >
+              <!-- Retrieve and display a list of popular movies from TMDB API. -->
+            </div>
+
+            <!-- slideshow buttons -->
+            <button
+              id="prev"
+              class="absolute hidden border left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-4 py-2 rounded-full"
+            >
+              Prev
+            </button>
+            <button
+              id="next"
+              class="absolute hidden border right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-4 py-2 rounded-full"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- End section popular movies -->
 
       <!-- Start section results -->
-      <section id="results" class="bg-black py-8">
+      <section id="results-section" class="bg-black py-8 hidden">
         <!-- content wrapper -->
-        <div id="results-container" class="container mx-auto px-4">
+        <div id="results-container" class="container mx-auto">
           <!-- headline container -->
           <div class="mb-6">
             <h2 class="text-2xl font-bold text-white">Search Results</h2>
           </div>
           <!-- result container -->
-          <div id="resultCards" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- start result item -->
-            <div id="resultItem" class="bg-white rounded-lg p-4 flex gap-4">
-              <div class="flex-shrink-0 mx-auto md:mx-0">
-                <img
-                  class="max-h-48 w-auto rounded-md"
-                  src="https://media.themoviedb.org/t/p/w220_and_h330_face/2E1x1qcHqGZcYuYi4PzVZjzg8IV.jpg"
-                  alt="wicked"
-                />
-              </div>
-              <div class="flex-1">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Wicked</h3>
-                <div>
-                  <div
-                    class="text-xs text-gray-600 flex flex-wrap gap-x-4 gap-y-1 mb-4"
-                  >
-                    <span>12/12/2024 (DE)</span>
-                    <span>get the genres</span>
-                    <span>get the runtime</span>
-                  </div>
-                  <h4 class="font-semibold text-gray-800 mb-2">Overview</h4>
-                  <p class="text-sm text-gray-700 leading-relaxed">
-                    In the land of Oz, ostracized and misunderstood
-                    green-skinned Elphaba is forced to share a room with the
-                    popular aristocrat Glinda at Shiz University, and the two's
-                    unlikely friendship is tested as they begin to fulfill their
-                    respective destinies as Glinda the Good and the Wicked Witch
-                    of the West.
-                  </p>
-                </div>
-                <button
-                  class="mt-4 bg-red-500 text-white font-medium py-2 px-4 rounded-md hover:bg-red-600"
-                >
-                  Add to favorites
-                </button>
-              </div>
-            </div>
-            <!-- end result item -->
-            <div id="resultItem" class="bg-white rounded-lg p-4 flex gap-4">
-              <div class="flex-shrink-0 mx-auto md:mx-0">
-                <img
-                  class="max-h-48 w-auto rounded-md"
-                  src="https://media.themoviedb.org/t/p/w220_and_h330_face/2E1x1qcHqGZcYuYi4PzVZjzg8IV.jpg"
-                  alt="wicked"
-                />
-              </div>
-              <div class="flex-1">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Wicked</h3>
-                <div>
-                  <div
-                    class="text-xs text-gray-600 flex flex-wrap gap-x-4 gap-y-1 mb-4"
-                  >
-                    <span>12/12/2024 (DE)</span>
-                    <span>get the genres</span>
-                    <span>get the runtime</span>
-                  </div>
-                  <h4 class="font-semibold text-gray-800 mb-2">Overview</h4>
-                  <p class="text-sm text-gray-700 leading-relaxed">
-                    In the land of Oz, ostracized and misunderstood
-                    green-skinned Elphaba is forced to share a room with the
-                    popular aristocrat Glinda at Shiz University, and the two's
-                    unlikely friendship is tested as they begin to fulfill their
-                    respective destinies as Glinda the Good and the Wicked Witch
-                    of the West.
-                  </p>
-                </div>
-                <button
-                  class="mt-4 bg-red-500 text-white font-medium py-2 px-4 rounded-md hover:bg-red-600"
-                >
-                  Add to favorites
-                </button>
-              </div>
-            </div>
-            <!-- end result item -->
-          </div>
+          <div
+            id="resultCards"
+            class="grid grid-cols-1 md:grid-cols-2 gap-6"
+          ></div>
         </div>
       </section>
       <!-- End section results -->
     </main>
 
-    <footer class="border-t">
-      <!-- Footer container -->
-      <div class="flex container mx-auto my-2">
-        <div class="flex-col w-2/5">
-          <p class="text-4xl font-bold">Cine Seekers</p>
-          <div class="my-4 flex flex-wrap gap-6">
-            <img
-              class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3]"
-              src="images/facebook-brands-solid.svg"
-              alt="Facebook"
-            />
-            <img
-              class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3]"
-              src="images/instagram-brands-solid.svg"
-              alt="Instagram"
-            />
-            <img
-              class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3]"
-              src="images/twitter-brands-solid.svg"
-              alt="Twitter (X)"
-            />
-            <img
-              class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3] h-6"
-              src="images/tiktok-brands-solid.svg"
-              alt="Tiktok"
-            />
-            <img
-              class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3]"
-              src="images/discord-brands-solid.svg"
-              alt="Discord"
-            />
-          </div>
-          <p class="font-light text-xs">
-            Cine Seekers © 2025. All rights reserved.
-          </p>
-        </div>
-        <div class="flex lg:flex-row sm:flex-row flex-col items-center w-3/5">
-          <ul class="w-1/3">
-            <li class="font-bold"><a href="">Company</a></li>
-            <li class="font-light text-sm hover:underline">
-              <a href="">About</a>
-            </li>
-            <li class="font-light text-sm hover:underline">
-              <a href="">Supporters</a>
-            </li>
-            <li class="font-light text-sm hover:underline">
-              <a href="">Careers</a>
-            </li>
-            <li class="font-light text-sm hover:underline">
-              <a href=""></a>
-              Events
-            </li>
-          </ul>
-          <ul class="w-1/3 lg:py-0 sm:py-0 py-2">
-            <li class="font-bold">Ressources</li>
-            <li class="font-light text-sm hover:underline">
-              <a href="">Blog</a>
-            </li>
-            <li class="font-light text-sm hover:underline">
-              <a href="">TMDB</a>
-            </li>
-            <li class="font-light text-sm hover:underline">
-              <a href="">Reviews</a>
-            </li>
-            <li class="font-light text-sm hover:underline">
-              <a href="">FAQ</a>
-            </li>
-          </ul>
-          <ul class="w-1/3">
-            <li class="font-bold">Community</li>
-            <li class="font-light text-sm hover:underline">
-              <a href="">Forums</a>
-            </li>
-            <li class="font-light text-sm hover:underline">
-              <a href="">Discord</a>
-            </li>
-            <li class="font-light text-sm hover:underline">
-              <a href="">Contests</a>
-            </li>
-            <li class="font-light text-sm hover:underline">
-              <a href="">Feedback</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </body>
+        <footer class="bg-[rgba(0,0,0,0.3)] text-white pt-5 pb-4">
+            <!-- Footer container -->
+            <div class="flex container mx-auto my-2">
+                <div class="flex-col w-2/5">
+                    <p class="text-4xl font-bold">Cine Seekers</p>
+                    <div class="my-4 flex flex-wrap gap-6">
+                        <img
+                            class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3]"
+                            src="images/facebook-brands-solid-white.svg"
+                            alt="Facebook" />
+                        <img
+                            class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3]"
+                            src="images/instagram-brands-solid-white.svg"
+                            alt="Instagram" />
+                        <img
+                            class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3]"
+                            src="images/twitter-brands-solid-white.svg"
+                            alt="Twitter (X)" />
+                        <img
+                            class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3] h-6"
+                            src="images/tiktok-brands-solid-white.svg"
+                            alt="Tiktok" />
+                        <img
+                            class="lg:w-6 sm:w-5 w-4 transition-transform duration-300 hover:scale-[1.3]"
+                            src="images/discord-brands-solid-white.svg"
+                            alt="Discord" />
+                    </div>
+                    <p class="font-light text-xs">
+                        Cine Seekers © 2025. All rights reserved.
+                    </p>
+                </div>
+                <div
+                    class="flex lg:flex-row sm:flex-row flex-col items-center w-3/5">
+                    <ul class="w-1/3">
+                        <li class="font-bold"><a href="">Company</a></li>
+                        <li class="font-light text-sm hover:underline">
+                            <a href="">About</a>
+                        </li>
+                        <li class="font-light text-sm hover:underline">
+                            <a href="">Supporters</a>
+                        </li>
+                        <li class="font-light text-sm hover:underline">
+                            <a href="">Careers</a>
+                        </li>
+                        <li class="font-light text-sm hover:underline">
+                            <a href=""></a>
+                            Events
+                        </li>
+                    </ul>
+                    <ul class="w-1/3 lg:py-0 sm:py-0 py-2">
+                        <li class="font-bold">Ressources</li>
+                        <li class="font-light text-sm hover:underline">
+                            <a href="">Blog</a>
+                        </li>
+                        <li class="font-light text-sm hover:underline">
+                            <a href="">TMDB</a>
+                        </li>
+                        <li class="font-light text-sm hover:underline">
+                            <a href="">Reviews</a>
+                        </li>
+                        <li class="font-light text-sm hover:underline">
+                            <a href="">FAQ</a>
+                        </li>
+                    </ul>
+                    <ul class="w-1/3">
+                        <li class="font-bold">Community</li>
+                        <li class="font-light text-sm hover:underline">
+                            <a href="">Forums</a>
+                        </li>
+                        <li class="font-light text-sm hover:underline">
+                            <a href="">Discord</a>
+                        </li>
+                        <li class="font-light text-sm hover:underline">
+                            <a href="">Contests</a>
+                        </li>
+                        <li class="font-light text-sm hover:underline">
+                            <a href="">Feedback</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <script src="javascript.js"></script>
+    </body>
 </html>
