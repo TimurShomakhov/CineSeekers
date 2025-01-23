@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.tailwindcss.com"></script>
@@ -97,80 +97,85 @@
                         </article>
                     </div>
 
-                    <!-- Keyword Search -->
+          <!-- Keyword Search -->
 
-                    <section
-                        id="search-form"
-                        class="p-6 bg-slate-50 rounded-lg max-w-max mx-auto">
-                        <form class="flex flex-col items-center space-y-2">
-                            <h4 class="font-semibold text-gray-800">
-                                Find Movies by Buzzword or Title
-                            </h4>
-                            <!-- Input field -->
-                            <input
-                                type="text"
-                                id="search"
-                                placeholder="Insert Keyword or Title"
-                                class="p-1 border border-gray-300 rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent w-full max-w-xs" />
-                            <!-- Search button -->
-                            <button
-                                id="searchBtn"
-                                type="submit"
-                                class="bg-red-500 text-white font-medium py-2 px-6 rounded-md hover:bg-red-600">
-                                Search
-                            </button>
-                        </form>
-                    </section>
-                </div>
-            </section>
-            <!-- End hero section -->
+          <section
+            id="search-form"
+            class="p-6 bg-slate-50 rounded-lg max-w-max mx-auto"
+          >
+            <form class="flex flex-col items-center space-y-2">
+              <h4 class="font-semibold text-gray-800">
+                Find Movies by Buzzword or Title
+              </h4>
+              <!-- Input field -->
+              <input
+                type="text"
+                id="search"
+                placeholder="Insert Keyword or Title"
+                class="p-1 border border-gray-300 rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent w-full max-w-xs"
+              />
+              <!-- Search button -->
+              <button
+                id="searchBtn"
+                type="submit"
+                class="bg-red-500 text-white font-medium py-2 px-6 rounded-md hover:bg-red-600"
+              >
+                Search
+              </button>
+            </form>
+          </section>
+        </div>
+      </section>
+      <!-- End hero section -->
 
-            <!-- Start section popular movies -->
-            <section class="container mx-auto" id="popular">
-                <div class="flex flex-col">
-                    <h2 class="text-2xl font-bold my-4">Popular Movies</h2>
-                    <!-- slideshow container -->
-                    <div class="relative">
-                        <div
-                            id="popular-movie-container"
-                            class="flex overflow-x-scroll space-x-4">
-                            <!-- Retrieve and display a list of popular movies from TMDB API. -->
-                        </div>
+      <!-- Start section popular movies -->
+      <section class="container mx-auto" id="popular">
+        <div class="flex flex-col">
+          <h2 class="text-2xl font-bold my-4">Popular Movies</h2>
+          <!-- slideshow container -->
+          <div class="relative">
+            <div
+              id="popular-movie-container"
+              class="flex overflow-x-scroll space-x-4"
+            >
+              <!-- Retrieve and display a list of popular movies from TMDB API. -->
+            </div>
 
-                        <!-- slideshow buttons -->
-                        <button
-                            id="prev"
-                            class="absolute hidden border left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-4 py-2 rounded-full">
-                            Prev
-                        </button>
-                        <button
-                            id="next"
-                            class="absolute hidden border right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-4 py-2 rounded-full">
-                            Next
-                        </button>
-                    </div>
-                </div>
-            </section>
-            <!-- End section popular movies -->
+            <!-- slideshow buttons -->
+            <button
+              id="prev"
+              class="absolute hidden border left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-4 py-2 rounded-full"
+            >
+              Prev
+            </button>
+            <button
+              id="next"
+              class="absolute hidden border right-0 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-4 py-2 rounded-full"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- End section popular movies -->
 
-            <!-- Start section results -->
-            <section id="results-section" class="bg-black py-8 hidden">
-                <!-- content wrapper -->
-                <div id="results-container" class="container mx-auto">
-                    <!-- headline container -->
-                    <div class="mb-6">
-                        <h2 class="text-2xl font-bold text-white">
-                            Search Results
-                        </h2>
-                    </div>
-                    <!-- result container -->
-                    <div
-                        id="resultCards"
-                        class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-                </div>
-            </section>
-            <!-- End section results -->
-        </main>
+      <!-- Start section results -->
+      <section id="results-section" class="bg-black py-8 hidden">
+        <!-- content wrapper -->
+        <div id="results-container" class="container mx-auto">
+          <!-- headline container -->
+          <div class="mb-6">
+            <h2 class="text-2xl font-bold text-white">Search Results</h2>
+          </div>
+          <!-- result container -->
+          <div
+            id="resultCards"
+            class="grid grid-cols-1 md:grid-cols-2 gap-6"
+          ></div>
+        </div>
+      </section>
+      <!-- End section results -->
+    </main>
 
         <footer class="bg-[rgba(0,0,0,0.3)] text-white pt-5 pb-4">
             <!-- Footer container -->
